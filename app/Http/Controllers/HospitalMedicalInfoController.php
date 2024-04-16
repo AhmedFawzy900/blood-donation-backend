@@ -28,4 +28,23 @@ class HospitalMedicalInfoController extends Controller
         $hospitals = HospitalMedicalInfo::get();
         return $hospitals;
     }
+
+    public function getHospitalsMedicalInfoById($id){
+        $hospital = HospitalMedicalInfo::find($id);
+        return $hospital;
+    }
+
+    public function updateHospitalMedicalInfo(Request $request, $id){
+        $hospital = HospitalMedicalInfo::where('hospital_id', $id)->first();
+        $hospital->count_A = $request->count_A;
+        $hospital->count_B = $request->count_B;
+        $hospital->count_O = $request->count_O;
+        $hospital->count_AB = $request->count_AB;
+        $hospital->count_Ap = $request->count_Ap;
+        $hospital->count_Bp = $request->count_Bp;
+        $hospital->count_Op = $request->count_Op;
+        $hospital->count_ABp = $request->count_ABp;
+        $hospital->save();
+        return $hospital;
+    }
 }

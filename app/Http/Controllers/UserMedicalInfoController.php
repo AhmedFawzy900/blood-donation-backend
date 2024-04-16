@@ -43,4 +43,24 @@ class UserMedicalInfoController extends Controller
         $userMedicalInfo = UserMedicalInfo::all();
         return $userMedicalInfo;
     }
+
+    public function getUserMedicalInfo($id)
+    {
+        $userMedicalInfo = UserMedicalInfo::where('user_id', $id)->first();
+        return $userMedicalInfo;
+    }
+    public function updateUserMedicalInfo(Request $request, $id)
+    {
+        $userMedicalInfo = UserMedicalInfo::where('user_id', $id)->first();
+        $userMedicalInfo->surgery_last_3_months = $request->surgery_last_3_months;
+        $userMedicalInfo->visted_dentist_last_3_months = $request->visted_dentist_last_3_months;
+        $userMedicalInfo->chronic_disease = $request->chronic_disease;
+        $userMedicalInfo->last_donate_time = $request->last_donate_time;
+        $userMedicalInfo->blood_type = $request->blood_type;
+        $userMedicalInfo->legal_to_donate = $request->legal_to_donate;
+        $userMedicalInfo->note = $request->note;
+        $userMedicalInfo->date = $request->date;
+        $userMedicalInfo->save();
+        return $userMedicalInfo;
+    }
 }

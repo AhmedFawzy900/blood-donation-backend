@@ -24,10 +24,14 @@ Route::post('/save-user-personal-info', 'App\Http\Controllers\UserPersonalInfoCo
 Route::get('/get-users-personal-info', 'App\Http\Controllers\UserPersonalInfoController@getUsersPersonalInfo');
 Route::post('/save-user-medical-info', 'App\Http\Controllers\UserMedicalInfoController@saveUserMedicalInfo');
 Route::get('/get-users-medical-info', 'App\Http\Controllers\UserMedicalInfoController@getUsersMedicalInfo');
+Route::get('/get-user-medical-info/{id}', 'App\Http\Controllers\UserMedicalInfoController@getUserMedicalInfo');
+Route::put('/update-user-medical-info/{id}', 'App\Http\Controllers\UserMedicalInfoController@updateUserMedicalInfo');
 Route::post('/save-hospital-personal-info', 'App\Http\Controllers\HospitalPersonalInfoController@saveHospitalPersonalInfo');
 Route::get('/get-hospitals-personal-info', 'App\Http\Controllers\HospitalPersonalInfoController@getHospitalsPersonalInfo');
 Route::post('/save-hospital-medical-info', 'App\Http\Controllers\HospitalMedicalInfoController@saveHospitalMedicalInfo');
 Route::get('/get-hospitals-medical-info', 'App\Http\Controllers\HospitalMedicalInfoController@getHospitalsMedicalInfo');
+Route::get('/get-hospital-medical-info/{id}', 'App\Http\Controllers\HospitalMedicalInfoController@getHospitalsMedicalInfoById');
+Route::put('/update-hospital-medical-info/{id}', 'App\Http\Controllers\HospitalMedicalInfoController@updateHospitalMedicalInfo');
 Route::get('/merge-user-data', 'App\Http\Controllers\UserPersonalInfoController@mergeUserData');
 Route::get('/merge-hospital-data', 'App\Http\Controllers\HospitalPersonalInfoController@mergeUserData');
 Route::put('/update-user-info/{id}', 'App\Http\Controllers\UserPersonalInfoController@updateUserInfo');
