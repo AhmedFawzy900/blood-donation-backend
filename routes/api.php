@@ -1,6 +1,8 @@
 <?php
 
+use App\Http\Controllers\CarRequestsController;
 use App\Http\Controllers\DonateRequestsController;
+use App\Models\CarRequests;
 use App\Models\DonateRequests;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -44,3 +46,11 @@ Route::post('/donate-request',[DonateRequestsController::class, 'saveDonateReque
 Route::get('/get-donate-requests', [DonateRequestsController::class, 'getDonateRequests']);
 Route::delete('/delete-donate-request/{id}', [DonateRequestsController::class, 'deleteDonateRequest']);
 Route::put('/update-donate-request/{id}', [DonateRequestsController::class, 'updateDonateRequest']);
+
+
+// car section
+Route::post('/car/make-requests',[CarRequestsController::class , 'MakeRequest']);
+Route::get('/car/get-requests',[CarRequestsController::class , 'GetRequests']);
+Route::get('/car/get-request/{id}',[CarRequestsController::class , 'GetRequest']);
+Route::delete('/car/delete-request/{id}',[CarRequestsController::class , 'deleteRequest']);
+Route::put('/car/update-request/{id}',[CarRequestsController::class , 'updateRequest']);
