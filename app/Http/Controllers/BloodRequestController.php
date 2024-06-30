@@ -17,6 +17,8 @@ class BloodRequestController extends Controller
         $BloodRequest->donor_type = $request->donor_type;
         $BloodRequest->blood_type = $request->blood_type;
         $BloodRequest->sender_type = $request->sender_type;
+        $BloodRequest->hospital_address = $request->hospital_address;
+
         $BloodRequest->save();
         return $BloodRequest;
     }

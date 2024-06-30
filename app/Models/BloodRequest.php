@@ -17,6 +17,7 @@ class BloodRequest extends Model
         'distance',
         'donor_type',
         'donor_type',
-        'sender_type'
+        'sender_type',
+        'hospital_address'
     ];
 }

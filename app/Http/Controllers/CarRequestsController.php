@@ -42,4 +42,9 @@ class CarRequestsController extends Controller
         $carRequest->save();
         return $carRequest;
     }
+
+    public function getDeletedRequests(){
+        $deletedItems = CarRequests::onlyTrashed()->get();
+        return $deletedItems;
+    }
 }

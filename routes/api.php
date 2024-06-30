@@ -1,7 +1,9 @@
 <?php
 
+use App\Http\Controllers\CarAdminsInfoController;
 use App\Http\Controllers\CarRequestsController;
 use App\Http\Controllers\DonateRequestsController;
+use App\Models\CarAdminsInfo;
 use App\Models\CarRequests;
 use App\Models\DonateRequests;
 use Illuminate\Http\Request;
@@ -54,3 +56,5 @@ Route::get('/car/get-requests',[CarRequestsController::class , 'GetRequests']);
 Route::get('/car/get-request/{id}',[CarRequestsController::class , 'GetRequest']);
 Route::delete('/car/delete-request/{id}',[CarRequestsController::class , 'deleteRequest']);
 Route::put('/car/update-request/{id}',[CarRequestsController::class , 'updateRequest']);
+Route::get('/car/get-deleted-requests/',[CarRequestsController::class , 'getDeletedRequests']);
+Route::get('/car/get-admins-info',[CarAdminsInfoController::class , 'getAllAdminsInfo']);
